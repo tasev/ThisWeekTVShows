@@ -92,7 +92,7 @@ fun MostPopularShowsScreen(
             items(movieListResponse?.results?.size?:0) { index ->
                 val clickedMovieRow = movieListResponse?.results?.get(index)?: MovieModel()
                 MostPopularShowMainItemView(clickedMovieRow) {
-                    navController.navigate("${NavScreen.ShowDetails.route}/${clickedMovieRow.id ?: 0}")
+                    navController.navigate("${NavScreen.ShowDetails.route}/${clickedMovieRow.id ?: -1}")
                 }
             }
         }
